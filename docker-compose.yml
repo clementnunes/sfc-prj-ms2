@@ -1,0 +1,10 @@
+version: '2'
+  
+services:
+    web:
+        build: .
+        image: sfc-prj-ms2
+        ports:
+          - "5000:5002"
+        volumes:
+          - .:/app
