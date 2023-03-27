@@ -27,6 +27,7 @@ async function run() {
     })
 
     await consumer.run({
+        // eslint-disable-next-line @typescript-eslint/require-await
         eachMessage: async ({ topic, partition, message }) => {
             if(null === message.value)
                 return;
