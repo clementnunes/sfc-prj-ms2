@@ -19,7 +19,7 @@ export class DbConn {
             password: DBConfig.PASSWORD,
             database: DBConfig.INSTANCE_NAME,
             entities: [User],
-            synchronize: false,
+            synchronize: DBConfig.SYNCHRONIZE,
             logging: false
         };
 
