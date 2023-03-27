@@ -34,8 +34,9 @@ export function usersRoutes (fastify: FastifyInstance, options: object, done: an
                 },
             })
         }
-
-        await userController.getCollection()
+        else {
+            await userController.getCollection()
+        }
     });
 
     fastify.get<{ Params: { id: string } }>('/users/:id', async (request) => await userController.get(request.params.id));
