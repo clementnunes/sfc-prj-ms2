@@ -23,7 +23,7 @@ export function usersRoutes (fastify: FastifyInstance, options: object, done: an
         if(KafkaConfig.KAFKA_USAGE) {
             await kafkaIns.consumer.subscribe({topic: KafkaConfig.KAFKA_TOPIC, fromBeginning: true})
 
-            await kafkaIns.consumer.run({
+            return await kafkaIns.consumer.run({
                 eachMessage: async ({message}) => {
                     if (null === message || null === message.value)
                         return;
