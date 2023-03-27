@@ -9,4 +9,6 @@ export class DBConfig {
     static PORT : number = EnvConfig.load("DB_PORT") as number;
 
     static INSTANCE_NAME : string = EnvConfig.load("DB_INSTANCE_NAME") as string;
+
+    static SYNCHRONIZE : boolean = EnvConfig.load("DB_SYNCHRONIZE") as boolean;
 }
