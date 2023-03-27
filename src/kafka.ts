@@ -7,8 +7,6 @@ export class KafkaJS {
 
     readonly _consumer: Consumer;
 
-    readonly _producer: Producer;
-
     private constructor() {
         this._kafka = new Kafka({
             clientId: KafkaConfig.KAFKA_GROUP_NAME,
@@ -17,9 +15,6 @@ export class KafkaJS {
 
         this._consumer = this._kafka.consumer({ groupId: KafkaConfig.KAFKA_GROUP_NAME })
         this._consumer.connect();
-
-        this._producer = this._kafka.producer()
-        this._producer.connect();
     }
 
     static getInstance()
@@ -38,10 +33,5 @@ export class KafkaJS {
     get consumer(): Consumer
     {
         return this._consumer;
-    }
-
-    get producer(): Producer
-    {
-        return this._producer;
     }
 }
